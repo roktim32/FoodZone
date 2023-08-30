@@ -31,31 +31,32 @@ const App = () => {
   if (loading) return <div>loading...</div>;
 
   return (
-    <Container>
-      <TopContainer>
-        <div className="logo">
-          <img src="/logo.svg" alt="logo" />
-        </div>
-        <div className="search">
-          <input type="text" placeholder="Search Food..." />
-        </div>
-      </TopContainer>
+    <>
+      <Container>
+        <TopContainer>
+          <div className="logo">
+            <img src="/logo.svg" alt="logo" />
+          </div>
+          <div className="search">
+            <input type="text" placeholder="Search Food..." />
+          </div>
+        </TopContainer>
 
-      <FilterContainer>
-        <Button>All</Button>
-        <Button>Breakfast</Button>
-        <Button>Lunch</Button>
-        <Button>Dinner</Button>
-      </FilterContainer>
-
+        <FilterContainer>
+          <Button>All</Button>
+          <Button>Breakfast</Button>
+          <Button>Lunch</Button>
+          <Button>Dinner</Button>
+        </FilterContainer>
+      </Container>
       <SearchResult data={data} />
-    </Container>
+    </>
   );
 };
 
 export default App;
 
-const Container = styled.div`
+export const Container = styled.div`
   max-width: 1200px;
   margin: 0 Auto;
 `;
@@ -86,7 +87,7 @@ const FilterContainer = styled.section`
   padding-bottom: 40px;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   background: #ff4343;
   border-radius: 5px;
   padding: 6px 12px;
